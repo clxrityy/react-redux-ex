@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# REACT REDUX EXAMPLES
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```none
+.
+├── public
+├── src
+├────└── actions // Functions for changing the state
+├────└── assets
+├────└── components
+├────└── layout
+├────└── pages
+├────└── reducers // Switch statements that alter the state
+├────└── [...]
+└── [...]
+```
 
-## Available Scripts
+##### `./src/actions/index.js`
+Individual functions for each change of state. Define the type and payload.
+> This is the function you will call to 
 
-In the project directory, you can run:
+```js
+export const increment = (payload = 1) => {
+    return {
+        type: 'INCREMENT',
+        payload: payload
+    };
+};
 
-### `npm start`
+// ...
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### `./src/reducers/counter.js`
+The reducer that defines how the state changes by the type of action.
+> In this example we are altering a numerical state by the *type* of action as specified in the example above. You'll see the state is set as a default of 0.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```js
+const counterReducer = (state = 0, action) => {
+    switch (action.type) {
+        default:
+            return state;
+        case 'INCREMENT':
+            return state + action.payload;
+        case 'DECREMENT':
+            return state - action.payload;
+        case 'RESET':
+            return state;
+    };
+};
 
-### `npm test`
+export default counterReducer;
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### `./src/reducers/index.js`
+Organize/combine all of the reducers to manage their own slice of state.
+> In this example, *"counter"* is what this slice of state will be referred to as. See the next example for how it's called and used.
 
-### `npm run build`
+```js
+import counterReducer from "./counter";
+import { combineReducers } from "redux";
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export const rootReducer = combineReducers({
+    counter: counterReducer,
+    // ...
+});
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+###### `./src/pages/Count.js`
+Import `useSelector` & `useDispatch` from `react-redux` and begin calling the actions to change the state within the application.
+> In this example, I'm using buttons with `onClick()` to increase the increment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from '../actions';
 
-### `npm run eject`
+const Count = () => {
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    const counter = useSelector(state => state.counter);
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    const dispatch = useDispatch();
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    return (
+        //...
+        <button
+            onClick={() => dispatch(increment())}
+            >
+            + 1
+        </button>
+    );
+};
+export default Count;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

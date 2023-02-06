@@ -1,0 +1,60 @@
+.Hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.code-snippet {
+    padding: 15px;
+    background-color: rgb(85, 85, 85);
+    max-width: fit-content;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 580px) {
+    .code-snippet {
+        max-width: min-content;
+    }
+}
+
+
+pre {
+    font-family: monospace;
+    font-weight: 600;
+}
+
+pre code {
+    color: rgba(255, 255, 255, 0.904);
+}
+
+pre code span {
+    color: rgba(255, 255, 0, 0.692);
+}
+
+.reference {
+    color: #165288;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.reference a {
+    text-decoration: none;
+    color: inherit;
+    transition: all ease-out 100ms;
+}
+
+.reference a:hover {
+    color: #103b61;
+    font-weight: 700;
+}
+
+.extension a {
+    text-decoration: none;
+    color: #165288;
+}
+
+.extension a:hover {
+    color: #103b61;
+    font-weight: 700;
+}

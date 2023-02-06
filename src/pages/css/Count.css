@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Orbitron:wght@400;500&family=Work+Sans&display=swap');
+
+
+.Count {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.current h1 span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 100;
+}
+
+.add-sub {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-sub button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px groove #888;
+    margin: 12px;
+    border-radius: 30%;
+}
+
+.add-sub button:hover {
+    background-color: rgb(109, 109, 109);
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: rgb(77, 197, 113);
+}
+
+.sub-btn {
+    background-color: rgb(209, 71, 71);
+}
+
+.weed {
+    width: 400px;
+    height: 400px;
+    padding: 25px
+}

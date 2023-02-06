@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
+.Color {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arimo', sans-serif;
+}
+
+.color-head h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #000;
+}
+
+@media screen and (max-width: 580px) {
+    .color-head h1 {
+        font-size: 40px;
+    }
+}
+
+.color-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.color-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: max-content;
+}
+
+.color-options button {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px groove rgba(0, 0, 0, 0.541);
+}
+
+.color-options button:hover {
+    cursor: pointer;
+    opacity: 75%;
+    border: 2px groove #000;
+}
+
+.color-options .red {
+    background-color: red;
+}
+
+.color-options .orange {
+    background-color: rgb(255, 123, 0);
+}
+
+.color-options .yellow {
+    background-color: yellow;
+}
+
+.color-options .green {
+    background-color: green;
+}
+
+.color-options .blue {
+    background-color: blue;
+}
+
+.color-options .purple {
+    background-color: purple;
+}
+
