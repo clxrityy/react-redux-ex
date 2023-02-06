@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-redux-ex/static/css/main.991d7941.css",
+    "main.js": "/react-redux-ex/static/js/main.944a4dd8.js",
+    "static/media/fourtwenty.png": "/react-redux-ex/static/media/fourtwenty.5e53f2b7567dd5fc1b5d.png",
+    "index.html": "/react-redux-ex/index.html",
+    "main.991d7941.css.map": "/react-redux-ex/static/css/main.991d7941.css.map",
+    "main.944a4dd8.js.map": "/react-redux-ex/static/js/main.944a4dd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.991d7941.css",
+    "static/js/main.944a4dd8.js"
+  ]
+}
