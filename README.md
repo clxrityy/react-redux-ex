@@ -1,4 +1,4 @@
-# REACT REDUX EXAMPLES
+# [REACT REDUX EXAMPLES](https://clxrityy.github.io/react-redux-ex/)
 
 ```none
 .
@@ -14,7 +14,7 @@
 └── [...]
 ```
 
-##### `./src/actions/index.js`
+#### [`./src/actions/index.js`](https://github.com/clxrityy/react-redux-ex/blob/master/src/actions/index.js)
 Individual functions for each change of state. Define the type and payload.
 > This is the function you will call within a component to change the state.
 
@@ -29,7 +29,7 @@ export const increment = (payload = 1) => {
 // ...
 ```
 
-##### `./src/reducers/counter.js`
+#### [`./src/reducers/counter.js`](https://github.com/clxrityy/react-redux-ex/blob/master/src/reducers/counter.js)
 The reducer that defines how the state changes by the type of action.
 > In this example we are altering a numerical state by the *type* of action as specified in the example above. You'll see the state is set as a default of 0.
 
@@ -50,7 +50,7 @@ const counterReducer = (state = 0, action) => {
 export default counterReducer;
 ```
 
-##### `./src/reducers/index.js`
+#### [`./src/reducers/index.js`](https://github.com/clxrityy/react-redux-ex/blob/master/src/reducers/index.js)
 Organize/combine all of the reducers to manage their own slice of state.
 > In this example, *"counter"* is what this slice of state will be referred to as. See the next example for how it's called and used.
 
@@ -64,7 +64,7 @@ export const rootReducer = combineReducers({
 });
 ```
 
-###### `./src/pages/Count.js`
+#### [`./src/pages/Count.js`](https://github.com/clxrityy/react-redux-ex/blob/master/src/pages/Count.js)
 Import `useSelector` & `useDispatch` from `react-redux` and begin calling the actions to change the state within the application.
 > In this example, I'm using buttons with `onClick()` to increase the increment.
 
