@@ -16,7 +16,7 @@
 
 ##### `./src/actions/index.js`
 Individual functions for each change of state. Define the type and payload.
-> This is the function you will call to 
+> This is the function you will call within a component to change the state.
 
 ```js
 export const increment = (payload = 1) => {
